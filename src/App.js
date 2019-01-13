@@ -1,13 +1,13 @@
 import React, { Component } from "react";
-import NavBar from "./components/navbar";
-import logo from "./logo.svg";
+import Page from "./components/page";
+import { Route } from "react-router-dom";
 
 class App extends Component {
   render() {
     return (
-      <div data-spy="scroll" data-target="#pb-navbar" data-offset="200">
-        <NavBar />
-      </div>
+      <React.Fragment>
+        <Page />
+      </React.Fragment>
     );
   }
 }
