@@ -1,6 +1,38 @@
 import React, { Component } from "react";
+import { HashLink as Link } from "react-router-hash-link";
 
 class NavBar extends Component {
+  navItems = [
+    {
+      display: "Home",
+      link: "/#section-home"
+    },
+    {
+      title: "About",
+      link: "/#section-about"
+    },
+    {
+      title: "Services",
+      link: "/#section-services"
+    },
+    {
+      title: "Portfolio",
+      link: "/#section-portfolio"
+    },
+    {
+      title: "Resume",
+      link: "/#section-resume"
+    },
+    {
+      title: "Contact",
+      link: "/#section-contact"
+    },
+    {
+      title: "Blog",
+      link: "/blog"
+    }
+  ];
+
   BASE_NAV_CLASSES =
     "navbar navbar-expand-lg site-navbar navbar-light bg-light ";
   BASE_NAV_BUTTON_CLASSES =
@@ -55,15 +87,6 @@ class NavBar extends Component {
     });
   };
 
-  mouseLeave = () => {
-    let classes = this.state.classes;
-    classes.add("sleep");
-    classes.delete("awake");
-    this.setState({
-      classes: classes
-    });
-  };
-
   navButtonToggle = () => {
     this.setState({
       isOpen: !this.state.isOpen
@@ -73,13 +96,11 @@ class NavBar extends Component {
   componentDidMount = function() {
     window.addEventListener("scroll", this.handleScroll);
     window.addEventListener("onMouseEnter", this.mouseEnter);
-    window.addEventListener("onMouseLeave", this.mouseLeave);
   };
 
   componentWillUnmount = function() {
     window.removeEventListener("scroll", this.handleScroll);
     window.addEventListener("onMouseEnter", this.mouseEnter);
-    window.addEventListener("onMouseLeave", this.mouseLeave);
   };
 
   render() {
@@ -92,12 +113,7 @@ class NavBar extends Component {
 
     return (
       <React.Fragment>
-        <nav
-          id="pb-navbar"
-          className={classes}
-          onMouseEnter={this.mouseEnter}
-          onMouseLeave={this.mouseLeave}
-        >
+        <nav id="pb-navbar" className={classes} onMouseEnter={this.mouseEnter}>
           <div className="container">
             <button
               className="navbar-toggler"
@@ -111,17 +127,21 @@ class NavBar extends Component {
             </a>
             <div className={navButtonClasses}>
               <ul className="navbar-nav">
-                {this.props.items.map(navitem => (
+                {this.navItems.map(navitem => (
                   <li className="nav-item" key={navitem.title}>
-                    <a
+                    <Link
+                      scroll={el =>
+                        el.scrollIntoView({
+                          behavior: "smooth",
+                          block: "start"
+                        })
+                      }
+                      to={navitem.link}
                       className="nav-link"
-                      onClick={() => {
-                        this.navButtonToggle();
-                        this.props.scrollToPage(navitem.title);
-                      }}
+                      key={navitem.link}
                     >
                       {navitem.title}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>

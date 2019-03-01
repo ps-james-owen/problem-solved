@@ -1,9 +1,11 @@
 import React, { Component } from "react";
+import SiteHero from "./siteHero";
 
 class Blog extends Component {
   render() {
     return (
       <React.Fragment>
+        <SiteHero />
         <section className="site-section" id="section-blog">
           <div className="container">
             <div className="row">
