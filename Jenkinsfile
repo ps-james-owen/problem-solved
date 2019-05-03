@@ -77,23 +77,17 @@ pipeline {
 
         stage('Upload to repository') {
             steps {
-                script {
-                    sh
-                    '''
+                sh '''#!/usr/bin/env bash
                     aws s3 cp ./problem-solved-web-$GIT_COMMIT.zip s3://repository.problemsolvedltd.co.uk/problem-solved-web-$GIT_COMMIT.zip
                     '''
-                }
             }
         }
 
         stage('Deploy Latest version to Test') {
             steps {
-                script {
-                    sh
-                    '''
+                sh '''#!/usr/bin/env bash
                     aws s3 sync $WORKSPACE/build s3://test.problemsolvedltd.co.uk/ --delete
                     '''
-                }
             }
         }
 
