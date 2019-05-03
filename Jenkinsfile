@@ -97,7 +97,7 @@ pipeline {
             }
         }
 
-        stage('Deploy version to Live') {
+        stage('Rollback') {
             steps {
                 script {
                     LIVE_VERSION = getLiveDeployedVersion

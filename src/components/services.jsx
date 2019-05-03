@@ -24,12 +24,9 @@ class Services extends Component {
                   <span className="icon">
                     <span className="icon-phone3" />
                   </span>
-                  <h3 className="mb-4">Mobile Optimize</h3>
+                  <h3 className="mb-4">Software Craftsmanship</h3>
                   <p>
-                    Far far away, behind the word mountains, far from the
-                    countries Vokalia and Consonantia, there live the blind
-                    texts. Separated they live in Bookmarksgrove right at the
-                    coast of the Semantics, a large language ocean.
+                    ProblemSolved takes a quality first approach to doftware design and implementation. Using industry standards and practices, we deliver quality software.
                   </p>
                   <p>
                     <a href="#/services" className="site-link">
@@ -46,12 +43,9 @@ class Services extends Component {
                   <span className="icon">
                     <span className="icon-wallet2" />
                   </span>
-                  <h3 className="mb-4">Increase Revenue</h3>
+                  <h3 className="mb-4">Architectural Solutions</h3>
                   <p>
-                    A small river named Duden flows by their place and supplies
-                    it with the necessary regelialia. It is a paradisematic
-                    country, in which roasted parts of sentences fly into your
-                    mouth.
+                    ProblemSolved has excellent experience designing both classic and serverless architecture solutions for a range of applications. This includes both Cloud and on-prem applications.
                   </p>
                   <p>
                     <a href="#/services" className="site-link">
@@ -68,12 +62,9 @@ class Services extends Component {
                   <span className="icon">
                     <span className="icon-lightbulb" />
                   </span>
-                  <h3 className="mb-4">Intuitive Idea</h3>
+                  <h3 className="mb-4">Delivering At Scale</h3>
                   <p>
-                    Even the all-powerful Pointing has no control about the
-                    blind texts it is an almost unorthographic life One day
-                    however a small line of blind text by the name of Lorem
-                    Ipsum decided to leave for the far World of Grammar.
+                    Employees at ProblemSolved have a proven track record of delivering applications at a large scale. Whether it's thousands or requests per second, or extreme computation, we can assist in powering your application.
                   </p>
                   <p>
                     <a href="#/services" className="site-link">
