@@ -108,13 +108,5 @@ pipeline {
                 }
             }
         }
-
-        stage('Rollback live release') {
-            steps {
-                script {
-
-                }
-            }
-        }
     }
 }
