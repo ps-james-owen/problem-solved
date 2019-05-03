@@ -31,7 +31,6 @@ pipeline {
         stage('NPM Audit fix') {
             steps {
                 sh '''#!/usr/bin/env bash
-                      . /var/lib/jenkins/.nvm/nvm.sh
                       echo "Should run audit here"
                    '''
             }
@@ -40,7 +39,6 @@ pipeline {
         stage('Linting') {
             steps {
                 sh '''#!/usr/bin/env bash
-                      . /var/lib/jenkins/.nvm/nvm.sh
                       npm run lint
                    '''
             }
@@ -48,19 +46,17 @@ pipeline {
 
         stage('Run tests') {
             steps {
-                script {
-                    sh
-                    'npm test -- --no-watch'
-                }
+                sh '''#!/usr/bin/env bash
+                      npm test -- --no-watch
+                   '''
             }
         }
 
         stage('Zip release') {
             steps {
-                script {
-                    sh
-                    'zip -r problem-solved-web-$GIT_COMMIT $WORKSPACE/build'
-                }
+                sh '''#!/usr/bin/env bash
+                    zip -r problem-solved-web-$GIT_COMMIT $WORKSPACE/build
+                   '''
             }
         }
 
