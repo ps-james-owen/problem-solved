@@ -78,7 +78,7 @@ pipeline {
         stage('Upload to repository') {
             steps {
                 sh '''#!/usr/bin/env bash
-                    aws s3 cp ./problem-solved-web-$GIT_COMMIT.zip s3://repository.problemsolvedltd.co.uk/problem-solved-web-$GIT_COMMIT.zip
+                    /var/lib/jenkins/.local/bin/aws s3 cp ./problem-solved-web-$GIT_COMMIT.zip s3://repository.problemsolvedltd.co.uk/problem-solved-web-$GIT_COMMIT.zip
                     '''
             }
         }
@@ -86,7 +86,7 @@ pipeline {
         stage('Deploy Latest version to Test') {
             steps {
                 sh '''#!/usr/bin/env bash
-                    aws s3 sync $WORKSPACE/build s3://test.problemsolvedltd.co.uk/ --delete
+                    /var/lib/jenkins/.local/bin/aws s3 sync $WORKSPACE/build s3://test.problemsolvedltd.co.uk/ --delete
                     '''
             }
         }
