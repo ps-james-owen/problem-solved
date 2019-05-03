@@ -52,6 +52,14 @@ pipeline {
             }
         }
 
+        stage('Run Build') {
+            steps {
+                sh '''#!/usr/bin/env bash
+                      npm run build
+                   '''
+            }
+        }
+
         stage('Zip release') {
             steps {
                 sh '''#!/usr/bin/env bash
