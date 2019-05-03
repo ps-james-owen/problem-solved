@@ -39,6 +39,8 @@ pipeline {
         stage('Linting') {
             steps {
                 sh '''#!/usr/bin/env bash
+                      . /var/lib/jenkins/.nvm/nvm.sh
+                      nvm use
                       npm run lint
                    '''
             }
@@ -47,6 +49,8 @@ pipeline {
         stage('Run tests') {
             steps {
                 sh '''#!/usr/bin/env bash
+                      . /var/lib/jenkins/.nvm/nvm.sh
+                      nvm use
                       npm test -- --no-watch
                    '''
             }
@@ -55,6 +59,8 @@ pipeline {
         stage('Run Build') {
             steps {
                 sh '''#!/usr/bin/env bash
+                      . /var/lib/jenkins/.nvm/nvm.sh
+                      nvm use
                       npm run build
                    '''
             }
