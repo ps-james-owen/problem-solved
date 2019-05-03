@@ -99,12 +99,13 @@ pipeline {
 
         stage('Rollback') {
             steps {
-                script {
-                    LIVE_VERSION = getLiveDeployedVersion
-                    ZIP_FILE = getLatestVersionDeployedInTest()
-                    createNewLiveFolder()
-                    copyTestZipFileToLiveBucket()
-                }
+                sh '''#!/usr/bin/env bash
+                    PREVIOUS_GIT_COMMIT=`git rev-parse HEAD^1`
+                    mkdir $WORKSPACE/rollback
+                    /var/lib/jenkins/.local/bin/aws s3 cp s3://repository.problemsolvedltd.co.uk/problem-solved-web-$PREVIOUS_GIT_COMMIT.zip $WORKSPACE/problem-solved-web-$PREVIOUS_GIT_COMMIT.zip
+                    unzip $WORKSPACE/problem-solved-web-$PREVIOUS_GIT_COMMIT.zip -d $WORKSPACE/rollback
+                    /var/lib/jenkins/.local/bin/aws s3 sync $WORKSPACE/rollback s3://test.problemsolvedltd.co.uk/ --delete 
+                    '''
             }
         }
     }
