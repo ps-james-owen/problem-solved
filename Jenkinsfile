@@ -78,25 +78,20 @@ pipeline {
         stage('Upload to repository') {
             steps {
                 script {
-
                     sh
                     '''
-                    S3_BUCKET=repository.problemsolvedltd.co.uk
-                    Create folder in S3 based on $GIT_COMITT
-                    Upload zip file to s3 bucket
+                    aws s3 cp ./problem-solved-web-$GIT_COMMIT.zip s3://repository.problemsolvedltd.co.uk/problem-solved-web-$GIT_COMMIT.zip
                     '''
                 }
             }
         }
 
-        stage('Deploy Latest version to Test Bucket') {
+        stage('Deploy Latest version to Test') {
             steps {
                 script {
                     sh
                     '''
-                    ZIP_FILE = downloadLatestTestVersionFromRepository()
-                    DIRECTORY = unzip file and place in directoru
-                    merge contents in to test S3 bucket
+                    aws s3 sync $WORKSPACE/build s3://test.problemsolvedltd.co.uk/ --delete
                     '''
                 }
             }
