@@ -5,16 +5,33 @@
   "dependencies": {
     "jshint": "2.9.6",
     "react": "16.4.1",
-    "react-dom": "16.4.1",
-    "react-router-dom": "4.3.1",
+    "react-recaptcha": "^2.3.10",
     "react-router-hash-link": "^1.2.1",
-    "react-scripts": "1.1.5"
+    "react-dom": "16.8.6",
+    "react-router-dom": "5.0.0",
+    "react-scripts": "2.1.8"
+  },
+  "devDependencies": {
+    "cypress": "3.2.0",
+    "eslint-plugin-cypress": "^2.2.1",
+    "eslint-plugin-react": "7.11.1",
+    "gulp": "3.9.1",
+    "gulp-clean": "0.4.0",
+    "gulp-install": "1.1.0",
+    "gulp-zip": "4.1.0"
   },
   "scripts": {
     "bootstrap": "^4.1.1",
+    "lint": "eslint src",
     "start": "react-scripts start",
-    "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
-  }
+    "eject": "react-scripts eject",
+    "prepush": "npm run lint && npm run test"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }

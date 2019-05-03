@@ -29,7 +29,7 @@ class NavBar extends Component {
     },
     {
       title: "Blog",
-      link: "/blog"
+      link: "/blog#section-blog"
     }
   ];
 
