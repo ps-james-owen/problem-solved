@@ -69,7 +69,7 @@ pipeline {
         stage('Zip release') {
             steps {
                 sh '''#!/usr/bin/env bash
-                    zip -r problem-solved-web-$GIT_COMMIT $WORKSPACE/build
+                    zip -j -r problem-solved-web-$GIT_COMMIT $WORKSPACE/build
                    '''
             }
         }
