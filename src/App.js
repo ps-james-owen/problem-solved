@@ -13,7 +13,7 @@ class App extends Component {
 
     static propTypes = {
         childPage: PropTypes.string
-    }
+    };
 
     render() {
         return (
