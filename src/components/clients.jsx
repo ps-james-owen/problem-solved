@@ -17,7 +17,7 @@ class Client extends Component {
             </div>
             <div className="row">
               {/* <div className="col-md-6"> */}
-              <h3>Become our first client</h3>
+              <h3>Become our first client woooooo</h3>
               {/* </div> */}
             </div>
           </div>
