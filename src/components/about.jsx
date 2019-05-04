@@ -27,7 +27,7 @@ const About = () => {
                 <br /> Our skills include:
               </p>
               <ul>
-                <li>Quality first approact to software engineering</li>
+                <li>Quality first approach to software engineering</li>
                 <li>Architecting on the cloud (specifically AWS) </li>
                 <li>Delivering large applications at scale</li>
               </ul>
