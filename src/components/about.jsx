@@ -31,21 +31,6 @@ const About = () => {
                 <li>Architecting on the cloud (specifically AWS) </li>
                 <li>Delivering large applications at scale</li>
               </ul>
-
-              <p>
-                <a
-                  href="#section-contact"
-                  className="btn btn-primary px-4 py-2 btn-sm smoothscroll"
-                >
-                  Hire Me
-                </a>
-                <a
-                  href="#section-contact"
-                  className="btn btn-secondary px-4 py-2 btn-sm"
-                >
-                  Download CV
-                </a>
-              </p>
             </div>
           </div>
 
