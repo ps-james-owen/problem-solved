@@ -105,6 +105,7 @@ pipeline {
                     mkdir $WORKSPACE/rollback
                     /var/lib/jenkins/.local/bin/aws s3 cp s3://repository.problemsolvedltd.co.uk/problem-solved-web-$PREVIOUS_GIT_COMMIT.zip $WORKSPACE/problem-solved-web-$PREVIOUS_GIT_COMMIT.zip
                     unzip $WORKSPACE/problem-solved-web-$PREVIOUS_GIT_COMMIT.zip -d $WORKSPACE/rollback
+                    find $WORKSPACE/rollback -exec touch -m {} +
                     cd $WORKSPACE/rollback
                     /var/lib/jenkins/.local/bin/aws s3 sync . s3://test.problemsolvedltd.co.uk/ --exact-timestamps --delete 
                     '''
