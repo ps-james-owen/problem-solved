@@ -106,6 +106,7 @@ pipeline {
                     /var/lib/jenkins/.local/bin/aws s3 cp s3://repository.problemsolvedltd.co.uk/problem-solved-web-$PREVIOUS_GIT_COMMIT.zip $WORKSPACE/problem-solved-web-$PREVIOUS_GIT_COMMIT.zip
                     unzip $WORKSPACE/problem-solved-web-$PREVIOUS_GIT_COMMIT.zip -d $WORKSPACE/rollback
                     cd $WORKSPACE/rollback
+                    /var/lib/jenkins/.local/bin/aws s3 cp . s3://test.problemsolvedltd.co.uk/ 
                     /var/lib/jenkins/.local/bin/aws s3 sync . s3://test.problemsolvedltd.co.uk/ --delete 
                     '''
             }
