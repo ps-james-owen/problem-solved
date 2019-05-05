@@ -85,7 +85,7 @@ class Contact extends Component {
 
                                     <div className="form-group mb-5">
                                         <Recaptcha
-                                            sitekey="6LdREJsUAAAAAJImFIHpfEBhxRSgeHtRfhhUAEyc"
+                                            sitekey="6LcBzaEUAAAAAEiYccevAYCLAcci9IpVrPSatfAX"
                                         />
                                     </div>
 
