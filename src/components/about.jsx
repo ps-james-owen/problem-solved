@@ -19,7 +19,7 @@ const About = () => {
                   About <strong>Us</strong>
                 </h2>
               </div>
-              <p className="lead">We help to solve problems</p>
+              <p className="lead">We help to solve problems :)</p>
               <p className="mb-5  ">
                 Problem Solved aims to provide skilled assistance to help
                 businesses solve a variety of technical problems.
