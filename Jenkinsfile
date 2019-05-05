@@ -87,6 +87,7 @@ pipeline {
         stage('Deploy Latest version to Test') {
             steps {
                 sh '''#!/usr/bin/env bash
+                    find $WORKSPACE/build -exec touch -m {} +
                     /var/lib/jenkins/.local/bin/aws s3 sync $WORKSPACE/build s3://test.problemsolvedltd.co.uk/ --delete
                     '''
             }
